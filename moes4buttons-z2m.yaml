@@ -1,5 +1,5 @@
 blueprint:
-  name: Zigbee2MQTT - Tuya 4-Button Switch (MQTT Device Trigger) 
+  name: Zigbee2MQTT - Tuya/MOES 4-Button Switch - GuiCool
   description: "Blueprint Version: 11-01-25\n
     Blueprint Name: Zigbee2MQTT - Tuya 4-Button Switch (MQTT Device Trigger) \n\n
     This blueprint uses MQTT `device` based triggers and it will be triggered only when the selected Device MQTT messages are received."
