@@ -1,6 +1,6 @@
 blueprint:
-  name: Zigbee2MQTT - Sonoff SNZB01-P  (Zigbee2MQTT version) 
-  description: "Blueprint Version: 11-01-25\n
+  name: Zigbee2MQTT - Sonoff SNZB01-P (GUI)
+  description: "Blueprint Version: 04-11-2025\n
     Blueprint Name: Zigbee2MQTT - Sonoff SNZB01-P (MQTT Device Trigger) \n\n
     This blueprint uses MQTT `device` based triggers and it will be triggered only when the selected Device MQTT messages are received."
   domain: automation
