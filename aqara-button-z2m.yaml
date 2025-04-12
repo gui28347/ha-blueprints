@@ -1,6 +1,6 @@
 blueprint:
-  name: Aqara Wireless Switch (single, double, triple, quadruple)
-  description: 'Control anything using Aqara Wireless Switch'
+  name:  Zigbee2MQTT - Aqara Zigbee Switch (single, double, triple, quadruple) - GuiCool
+  description: 'Control devices using Aqara Zigbee Switch'
   domain: automation
   input:
     switch:
