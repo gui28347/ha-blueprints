@@ -1,0 +1,53 @@
+blueprint:
+  name: Schedule Switch
+  description: Turn a switch on/of based a helper schedule changed state
+  domain: automation
+  input:
+    entity_switch:
+      name: Switch
+      description: Switch to turn on/off based on schedule state
+      selector:
+        entity:
+          domain: switch
+          multiple: false
+    entity_schedule:
+      name: Schedule
+      description: Schedule to listen for state triggers
+      selector:
+        entity:
+          domain: schedule
+          multiple: false
+    extra_actions:
+      name: Actions to fire when state occurred
+      default: []
+      selector:
+        action: { }
+
+mode: single
+max_exceeded: silent
+
+trigger:
+  - platform: state
+    entity_id: !input "entity_schedule"
+    to: 'on'
+  - platform: state
+    entity_id: !input "entity_schedule"
+    to: 'off'
+
+action:
+  - variables:
+      entity_schedule: !input "entity_schedule"
+      payload: "{% if trigger.to_state|default(false,true) %}{{ trigger.to_state.state }}{% else %}{{ states(entity_schedule) }}{% endif %}"
+  - if:
+      - condition: template
+        value_template: "{{ payload == 'on' }}"
+    then:
+      - service: switch.turn_on
+        target:
+          entity_id: !input "entity_switch"
+    else:
+      - service: switch.turn_off
+        target:
+          entity_id: !input "entity_switch"
+  - choose: [ ]
+    default: !input extra_actions
