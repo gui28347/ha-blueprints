@@ -1,5 +1,5 @@
 blueprint:
-  name: Aqara Wireless Switch (single, double, long)
+  name: Sonoff Zigbee Switch (single, double, long)
   description: 'Control anything using Sonoff Zibee Switch SNZB-01P' 
   domain: automation
   input:
