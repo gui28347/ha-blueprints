@@ -27,7 +27,7 @@ blueprint:
     
     press_triple:
       name: Triple button press
-      description: Action to run on double triple press
+      description: Action to run on triple press
       default: []
       selector:
         action: {}
