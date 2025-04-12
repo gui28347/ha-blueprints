@@ -5,6 +5,9 @@ blueprint:
     This blueprint uses MQTT `device` based triggers and it will be triggered only when the selected Device MQTT messages are received."
   domain: automation
   input:
+    mode:
+      name: Automation Modes
+      default: parallel
     zigbee_device:
       name: Sonoff SBZN01-P Zigbee Switch
       description: Select the correct Sonoff Zigbee switch to use.
